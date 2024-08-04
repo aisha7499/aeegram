@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:teegram/firebase_options.dart';
 import 'package:teegram/view/home_screen.dart';
+import 'package:teegram/view/page_categorygrid.dart';
 import 'package:teegram/view/registration_screen.dart';
  
  
