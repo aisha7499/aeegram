@@ -17,10 +17,7 @@ final List<Category> categoriesList = [
     title: "Shoes",
     //image: "assets/images/pic3.jpg",
   ),
-  Category(
-    title: "All",
-   // image: "assets/images/pic3.jpg",
-  ),
+ 
   Category(
     title: "Electronic",
    // image: "assets/images/pic3.jpg",

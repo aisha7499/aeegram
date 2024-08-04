@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "383976062219",
+    "project_id": "teegram-75a77",
+    "storage_bucket": "teegram-75a77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383976062219:android:88093b0bd2309516d8760e",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKu9Oh-eqB57Hl4vvyAeAElNEydkVdwXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383976062219:android:f9f14f95e6c97d8dd8760e",
+        "android_client_info": {
+          "package_name": "com.example.teegram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKu9Oh-eqB57Hl4vvyAeAElNEydkVdwXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

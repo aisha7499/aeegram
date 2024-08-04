@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:teegram/utils/utils.dart';
+import 'package:teegram/view/home_screen.dart';
 import 'package:teegram/wiget/button_widget.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -13,32 +16,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController emailcontoller = TextEditingController();
   TextEditingController paswordcontoller = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  // FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  void signup() {
+    setState(() {
+      loading = true;
+    });
+    // signupFunc1();
+    // loading = true;
+    _auth
+        .createUserWithEmailAndPassword(
+            email: emailcontoller.text.toString(),
+            password: paswordcontoller.text.toString())
+        .then((value) {
+      setState(() {
+        loading = false;
+      });
+    }).onError((error, StackTrace) {
+      Utils().toastMessage(error.toString());
+      setState(() {
+        loading = false;
+      });
+    });
+  }
 
-  // void login() {
-  //   setState(() {
-  //     loading = true;
-  //   });
-  //   _auth
-  //       .signInWithEmailAndPassword(
-  //           email: emailcontoller.text.toString(),
-  //           password: paswordcontoller.text.toString())
-  //       .then((value) {
-  //     Utils().toastMessage(value.user!.email.toString());
-  //     Get.to(() => HomeScreen());
-  //     // Navigator.push(
-  //     //     context, MaterialPageRoute(builder: (context) => HomeScreen()));
-  //     setState(() {
-  //       loading = false;
-  //     });
-  //   }).onError((error, StackTrace) {
-  //     debugPrint(error.toString());
-  //     Utils().toastMessage(error.toString());
-  //     setState(() {
-  //       loading = false;
-  //     });
-  //   });
-  // }
   @override
   Widget build(BuildContext context) {
    return 
@@ -150,29 +150,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 loading: loading,
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                   // login();
+                    signup();
                   }
                 },
               ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Text("Don't have an account?"),
-              //     TextButton(
-              //         onPressed: () {
-              //           Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                   builder: (context) =>HomeScreen()
-              //                   // SignupScreen()
-              //                    ));
-              //         },
-              //         child: Text("Sign up"))
-                //],
-              //)
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an account?"),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>HomeScreen()
+                                // SignupScreen()
+                                 ));
+                      },
+                      child: Text("Sign up"))
+                ],
+              )
             ],
             // ),
           ),
